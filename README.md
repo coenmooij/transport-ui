@@ -1,27 +1,27 @@
-# TransportUi
+![Heroku](https://pyheroku-badge.herokuapp.com/?app=transport-ui)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.2.
+# Transport UI
 
-## Development server
+## Live Environment
+This app is automatically deployed to Heroku.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+https://transport-ui.herokuapp.com/
 
-## Code scaffolding
+## Running locally
+1. Clone the repository `git clone https://github.com/coenmooij/transport-ui.git`
+2. Navigate into the directory (e.g. `cd transport-ui`)
+3. install dependencies using `npm install`
+4. Run `ng serve` to start the server
+5. Click on the link in your terminal or navigate to `http://localhost:4200/`
+6. You should see the app running in your browser!
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Testing
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Unit Tests
 
-## Running unit tests
+Run `ng test` to execute the unit tests via Karma.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### End-to-End Tests
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Run `ng e2e` to execute the end-to-end tests via Cypress. (not yet implemented)
