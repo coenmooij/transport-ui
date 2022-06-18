@@ -1,0 +1,18 @@
+@use "sass:color";
+
+.page {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.page__content {
+  flex-grow: 1;
+  align-self: center;
+  width: 100%;
+  max-width: 96rem;
+  overflow-y: auto;
+}
