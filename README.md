@@ -2,7 +2,6 @@
 ![Test](https://github.com/coenmooij/transport-ui/actions/workflows/test.yml/badge.svg)
 ![Heroku](https://pyheroku-badge.herokuapp.com/?app=transport-ui)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/coenmooij/transport-ui/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/coenmooij/transport-ui/?branch=main)
-[![Code Coverage](https://scrutinizer-ci.com/g/coenmooij/transport-ui/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/coenmooij/transport-ui/?branch=main)
 
 # Transport UI
 
