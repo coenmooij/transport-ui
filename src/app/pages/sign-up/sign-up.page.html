@@ -1,2 +1,31 @@
-<h2>Sign Up</h2>
-<p>Sign up for TransPort here.</p>
+<tp-title>Sign Up</tp-title>
+
+<tp-card>
+  <p>Sign up for TransPort App and your life will be better instantly. Try it!</p>
+
+  <form (submit)="onSubmit()" [formGroup]="form">
+    <tp-field-group>
+      <tp-field name="first-name">
+        <tp-label>First Name</tp-label>
+        <tp-text-input formControlName="firstName" placeholder="Tom"></tp-text-input>
+      </tp-field>
+
+      <tp-field name="last-name">
+        <tp-label>Last Name</tp-label>
+        <tp-text-input formControlName="lastName" placeholder="Wilson"></tp-text-input>
+      </tp-field>
+    </tp-field-group>
+
+    <tp-field name="email">
+      <tp-label>Email</tp-label>
+      <tp-text-input formControlName="email" placeholder="t.wilson@transport.app"></tp-text-input>
+    </tp-field>
+
+    <tp-field name="password">
+      <tp-label>Password</tp-label>
+      <tp-password-input formControlName="password"></tp-password-input>
+    </tp-field>
+
+    <tp-button [isDisabled]="!form.valid || state === 'pending'">Complete sign up</tp-button>
+  </form>
+</tp-card>

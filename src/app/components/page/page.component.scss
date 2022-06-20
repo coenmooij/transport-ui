@@ -2,7 +2,7 @@
 
 .page {
   display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
