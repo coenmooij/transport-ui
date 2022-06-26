@@ -15,6 +15,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class PasswordInputComponent implements ControlValueAccessor {
     @Input() public field?: string;
+    @Input() public hasError: boolean = false;
 
     public value?: string;
     public isDisabled: boolean = false;

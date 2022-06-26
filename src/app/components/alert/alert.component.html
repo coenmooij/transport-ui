@@ -1,0 +1,9 @@
+<div [ngClass]="'alert--' + type" class="alert">
+  <span class="alert__icon">
+    <tp-icon *ngIf="type === 'error'" icon="times"></tp-icon>
+    <tp-icon *ngIf="type === 'info'" icon="lightbulb"></tp-icon>
+    <tp-icon *ngIf="type === 'warning'" icon="exclamation-triangle"></tp-icon>
+    <tp-icon *ngIf="type === 'success'" icon="check"></tp-icon>
+  </span>
+  <ng-content></ng-content>
+</div>

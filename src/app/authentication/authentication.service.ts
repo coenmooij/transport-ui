@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { environment } from '../../environments';
 import { ApiService } from '../core';
 import { SignUpRequest } from './sign-up.request';
+import { SignUpResponse } from './sign-up.response';
 import { WEBSERVICES } from './webservices';
 
 @Injectable({
@@ -11,7 +12,7 @@ import { WEBSERVICES } from './webservices';
 export class AuthenticationService {
     constructor(private apiService: ApiService) {}
 
-    public signUp$(request: SignUpRequest): Observable<void> {
-        return this.apiService.post$(environment.apiBaseUrl + WEBSERVICES.REGISTER, request);
+    public signUp$(request: SignUpRequest): Observable<SignUpResponse> {
+        return this.apiService.post$<SignUpResponse>(environment.apiBaseUrl + WEBSERVICES.REGISTER, request);
     }
 }

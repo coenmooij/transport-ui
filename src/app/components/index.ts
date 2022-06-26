@@ -1,3 +1,4 @@
+export * from './alert';
 export * from './brand';
 export * from './button';
 export * from './card';
@@ -5,6 +6,9 @@ export * from './field';
 export * from './field-group';
 export * from './footer';
 export * from './header';
+export * from './icon';
+export * from './input-error';
+export * from './input-hint';
 export * from './label';
 export * from './page';
 export * from './password-input';

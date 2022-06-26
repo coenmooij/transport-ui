@@ -1,3 +1,28 @@
 .field {
   padding-bottom: 1.6rem;
 }
+
+.field__content {
+  display: flex;
+  align-items: center;
+}
+
+.field__input {
+  flex-grow: 1;
+}
+
+.field__icon {
+  margin-left: 1rem;
+
+  &:empty {
+    display: none;
+  }
+
+  &--error {
+    color: red;
+  }
+
+  &--success {
+    color: green;
+  }
+}

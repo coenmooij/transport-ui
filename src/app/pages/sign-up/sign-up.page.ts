@@ -1,29 +1,55 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { AuthenticationService } from '../../authentication';
-import { SignUpRequest } from '../../authentication/sign-up.request';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthenticationService, SignUpRequest, SignUpResponse } from '../../authentication';
+import { EmailValidator, PasswordValidator } from '../../core';
 
 @Component({
     templateUrl: 'sign-up.page.html',
 })
 export class SignUpPage {
-    public form: FormGroup = new FormGroup({
-        firstName: new FormControl('', [Validators.required]),
-        lastName: new FormControl('', [Validators.required]),
-        email: new FormControl('', [Validators.required, Validators.email]),
-        password: new FormControl('', [Validators.required]), // TODO  ADD validators
-    });
+    public form: FormGroup = new FormGroup(
+        {
+            firstName: new FormControl('', { validators: [Validators.required] }),
+            lastName: new FormControl('', { validators: [Validators.required] }),
+            email: new FormControl('', {
+                validators: [Validators.required, Validators.email],
+                asyncValidators: [this.emailValidator.validate()],
+            }),
+            password: new FormControl('', {
+                validators: [Validators.required, Validators.minLength(8)],
+            }),
+        },
+        [PasswordValidator.nameInPassword()]
+    );
 
     public state: 'initial' | 'pending' | 'error' | 'success' = 'initial';
+    public registrationId?: string;
 
-    constructor(private authenticationService: AuthenticationService) {}
+    constructor(private authenticationService: AuthenticationService, private emailValidator: EmailValidator) {}
+
+    public get firstName(): AbstractControl {
+        return <AbstractControl>this.form.get('firstName');
+    }
+
+    public get lastName(): AbstractControl {
+        return <AbstractControl>this.form.get('lastName');
+    }
+
+    public get email(): AbstractControl {
+        return <AbstractControl>this.form.get('email');
+    }
+
+    public get password(): AbstractControl {
+        return <AbstractControl>this.form.get('password');
+    }
 
     public onSubmit(): void {
         const signUpRequest: SignUpRequest = this.form.value;
 
         this.state = 'pending';
         this.authenticationService.signUp$(signUpRequest).subscribe({
-            next: () => {
+            next: (response: SignUpResponse) => {
+                this.registrationId = response._id;
                 this.state = 'success';
             },
             error: () => {

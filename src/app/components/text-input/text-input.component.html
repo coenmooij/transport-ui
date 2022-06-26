@@ -1,5 +1,6 @@
 <input
   (ngModelChange)="onValueChange($event)"
+  [class.text-input--error]="hasError"
   [id]="field"
   [ngModel]="value"
   [placeholder]="placeholder"

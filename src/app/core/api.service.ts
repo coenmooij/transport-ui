@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 export class ApiService {
     constructor(private httpClient: HttpClient) {}
 
-    public post$(webservice: string, request: any): Observable<void> {
-        return this.httpClient.post<void>(webservice, request);
+    public post$<Response>(webservice: string, request: any): Observable<Response> {
+        return this.httpClient.post<Response>(webservice, request);
     }
 }
