@@ -49,8 +49,8 @@ Very short through the corner, the levels are:
 - :white_check_mark: Stylelint with plugins (advanced SCSS rules and formatting)
 - :no_entry: ESLint with plugins (advanced JS/TS rules & formatting)
 
-> :warning: Unfortunately unavailable at time of setup because of angular14 update. At the time of writing it has
-> fortunately (for the next projects) just become available.
+> :warning: ESLint was unfortunately unavailable at time of setup because of angular14 update. At the time of writing it
+> has fortunately (for the next projects) just become available.
 
 ### Unit Tests
 
@@ -106,13 +106,13 @@ I am very aware that this UI can be classified as a back-end design. However, it
 > 😢 The brand colors are unfortunately not really suited for dark mode, as the orange and the purple live on different
 > respective ends of the contrast spectrum.
 
-For the actually scss I've taken a standard normalize sheet and some google font, next to scaling rem's down to 10px.
+For the actual scss I've taken a standard normalize sheet and some google font, next to scaling rem's down to 10px.
 
 Oh yes, and check out the favicon. :smile:
 
 ## Architecture
 
-The project is too small to seperate into projects or libraries, but functionality (pages/routing/layout), components
+The project is too small to separate into projects or libraries, but functionality (pages/routing/layout), components
 (html, scss), and the core (services, interfaces, utility) are separate. Basic MVC stuff really.
 
 I've used barrel files (`index.ts`) as much as possible to simplify imports and future-proof refactoring.
@@ -128,6 +128,25 @@ baked in.
 
 So you can just use it, and it will work, but you can configure or structure from outside. To facilitate this, I rely
 heavily on content projection.
+
+## Features
+
+The app has a sign-up link on the page and button in header. Click each to go to the signup form.
+
+There is an additional constraint on the email field, which was not described in the assignment. However, I wanted to
+use an async validator. So that's why.
+
+> Note from me: UX is suboptimal with the way the errors are shown while you're still filling in the form. Can be solved
+> with a different UX approach. Need a UX-Professional for a consistent approach among forms.
+
+## Developer's Note
+
+In regard to the technology/stack being appropriate for the assigment. That's an interesting question. As the assignment
+is both to give an indication of your level of skill, but also pragmatism and ability to deliver when asked.
+
+I consider myself a 10x developer, but in order to accomplish that level of speed, you need an iterative approach, a bit
+of freedom and a good team/process. Tools and code quality should be facilitating this and be of the level of quality
+that allows the dev-team to focus on providing quality features to the users.
 
 ## Running locally
 
