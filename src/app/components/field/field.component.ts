@@ -20,7 +20,7 @@ import { TextInputComponent } from '../text-input';
 })
 export class FieldComponent implements AfterContentInit, AfterContentChecked {
     @ContentChildren(InputErrorComponent) public errors!: QueryList<InputErrorComponent>;
-    @ContentChild(LabelComponent) public label!: LabelComponent;
+    @ContentChild(LabelComponent) public label?: LabelComponent;
     @ContentChild(TextInputComponent) public textInput?: TextInputComponent;
     @ContentChild(PasswordInputComponent) public passwordInput?: PasswordInputComponent;
 
@@ -28,7 +28,9 @@ export class FieldComponent implements AfterContentInit, AfterContentChecked {
     @Input() public control?: AbstractControl;
 
     public ngAfterContentInit(): void {
-        this.label.field = this.name;
+        if (this.label) {
+            this.label.field = this.name;
+        }
         if (this.textInput) {
             this.textInput.field = this.name;
         }

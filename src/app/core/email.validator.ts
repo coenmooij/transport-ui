@@ -3,7 +3,7 @@ import { AbstractControl, AsyncValidatorFn, ValidationErrors } from '@angular/fo
 import { delay, map, Observable, of } from 'rxjs';
 
 const ALLOWED_DOMAIN = 'transport.app';
-const FAKE_API_DELAY_IN_MS = 2000;
+const FAKE_API_DELAY_IN_MS = 1000;
 
 @Injectable({ providedIn: 'root' })
 export class EmailValidator {

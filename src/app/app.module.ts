@@ -4,9 +4,10 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core';
 import { RoutingModule } from './routing/routing.module';
+import { TestpietjeComponent } from './testpietje/testpietje.component';
 
 @NgModule({
-    declarations: [AppComponent],
+    declarations: [AppComponent, TestpietjeComponent],
     imports: [BrowserModule, RoutingModule, RouterModule, CoreModule],
     bootstrap: [AppComponent],
 })
