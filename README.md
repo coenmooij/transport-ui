@@ -13,7 +13,7 @@ https://transport-ui.herokuapp.com/
 
 ## Introduction
 
-This app was created as a code assignment with a time constraint.
+This app was created as a code assignment with a time constraint of 6-8 hours.
 
 The general steps I took are:
 
@@ -29,12 +29,12 @@ The general steps I took are:
 
 > Give me six hours to chop down a tree and I will spend the first four sharpening the axe. - Abraham Lincoln
 
-As hinted by the above quotes, tooling is not just a necessity, it is fundamental.
+As hinted by the above quotes, I consider tooling to be quite fundamental.
 
-The basic chain of commands of tooling is bottom up. Which doesn't mean one tool is above the other, but it does mean
-however that they run in order.
+The basic chain of commands of tooling I use is bottom up. This doesn't mean one tool is better than the other, however
+it does mean they run in order.
 
-Very short through the corner, the levels are:
+These levels are:
 
 - Entry Level Hygiene: Linters (spaces, commas, the most basic stuff)
 - Does it even compile? (`npm run build`)
@@ -112,8 +112,8 @@ Oh yes, and check out the favicon. :smile:
 
 ## Architecture
 
-The project is too small to separate into projects or libraries, but functionality (pages/routing/layout), components
-(html, scss), and the core (services, interfaces, utility) are separate. Basic MVC stuff really.
+The project imo is too small to separate into projects or libraries, but functionality (pages/routing/layout), components
+(html, scss), and the core (services, interfaces, utility) are separate. You could consider it MVC pattern.
 
 I've used barrel files (`index.ts`) as much as possible to simplify imports and future-proof refactoring.
 
